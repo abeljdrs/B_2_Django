@@ -1,0 +1,217 @@
+[
+  {
+    "model": "forkilla.Restaurant",
+    "pk": 1,
+    "fields": {
+      "restaurant_number": "09186777",
+      "name": "Only Tapas",
+      "menu_description" :"TAPAS",
+      "price_average" : "30",
+      "is_promot" : "False",
+      "rate" : "10",
+      "category" : "Medi",
+      "city": "Barcelona",
+      "address": "Les Rambles, 33",
+      "country": "Spain",
+      "capacity": 40
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": 2,
+    "fields": {
+      "restaurant_number": "0918888",
+      "name": "Only Fish",
+      "menu_description" :"Fish",
+      "price_average" : "120.1",
+      "is_promot" : "False",
+      "rate" : "9",
+      "category" : "Chin",
+      "city": "Barcelona",
+      "address": "Gran Via de les Corts Catalanes, 100",
+      "country": "Spain",
+      "capacity": 200
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "0000001",
+      "name": "Only Meat",
+      "menu_description" :"Meat",
+      "price_average" : "100",
+      "is_promot" : "True",
+      "rate" : "8",
+      "category" : "Medi",
+      "city": "Barcelona",
+      "address": "Rambla, 495",
+      "country": "Spain",
+      "capacity": 900
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "0000002",
+      "name": "Only Veggie",
+      "menu_description" :"Grass",
+      "price_average" : "200",
+      "is_promot" : "True",
+      "rate" : "5.3",
+      "category" : "Grek",
+      "city": "Barcelona",
+      "address": "Gran Via de les Corts Catalanes, 200",
+      "country": "Spain",
+      "capacity": 240
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "00000003",
+      "name": "Only Pita",
+      "menu_description" :"Pitas",
+      "price_average" : "102",
+      "is_promot" : "False",
+      "rate" : "9.8",
+      "category" : "Chin",
+      "city": "Barcelona",
+      "address": "Diputaciom, 495",
+      "country": "Spain",
+      "capacity": 100
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "09186666",
+      "name": "Only Pizza",
+      "menu_description" :"PIZZA",
+      "price_average" : "20.2",
+      "is_promot" : "True",
+      "rate" : "10",
+      "category" : "Ital",
+      "city": "Barcelona",
+      "address": "Passeig de Gracia, 495",
+      "country": "Spain",
+      "capacity": 100
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "0000005",
+      "name": "Only Peruvian",
+      "menu_description" :"PERUVIAN FOOD",
+      "price_average" : "115",
+      "is_promot" : "False",
+      "rate" : "9.2",
+      "category" : "Peru",
+      "city": "Madrid",
+      "address": "Gran Via, 495",
+      "country": "Spain",
+      "capacity": 240
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "09186633",
+      "name": "Only Russian",
+      "menu_description" :"RUSSIANS",
+      "price_average" : "100",
+      "is_promot" : "False",
+      "rate" : "8.9",
+      "category" : "Russ",
+      "city": "Madrid",
+      "address": "Callao, 0",
+      "country": "Spain",
+      "capacity": 50
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "09186466",
+      "name": "Only Fusion",
+      "menu_description" :"FUSION A TOPE",
+      "price_average" : "120",
+      "is_promot" : "True",
+      "rate" : "9.1",
+      "category" : "Fusion",
+      "city": "Sitges",
+      "address": "Avinguda del Mar, 495",
+      "country": "Spain",
+      "capacity": 233
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "09186111",
+      "name": "Only Afri",
+      "menu_description" :"Empty ",
+      "price_average" : "100.33",
+      "is_promot" : "True",
+      "rate" : "9",
+      "category" : "Afri",
+      "city": "Barcelona",
+      "address": "Gran Via de les Corts Catalanes, 435",
+      "country": "Spain",
+      "capacity": 24
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "091861",
+      "name": "Only Rice",
+      "menu_description" :"RICE",
+      "price_average" : "12.33",
+      "is_promot" : "True",
+      "rate" : "9.2",
+      "category" : "Rice",
+      "city": "Gibraltar",
+      "address": "Main Road, 495",
+      "country": "Spain",
+      "capacity": 242
+    }
+  },
+
+   {
+    "model": "forkilla.Restaurant",
+    "pk": null,
+    "fields": {
+      "restaurant_number": "0918641",
+      "name": "Only Mexican",
+      "menu_description" :"TACOS",
+      "price_average" : "200.33",
+      "is_promot" : "False",
+      "rate" : "7.0",
+      "category" : "Mexi",
+      "city": "Barcelona",
+      "address": "Pau Claris, 2",
+      "country": "Spain",
+      "capacity": 90
+    }
+  },
+]

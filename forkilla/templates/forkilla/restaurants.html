@@ -1,0 +1,21 @@
+{% extends 'forkilla/base.html' %}
+
+{% block content %}
+
+<h4>forkilla/{{city}}</h4>
+
+
+
+ <form action="{% url 'reservation'%}" method="get">
+     {% for restaurant in restaurants %}
+    	<span > {{restaurant.get_human_category}}</span> 
+       <a href="{% url 'details' restaurant.restaurant_number%}"> {{restaurant.name}} </a> : {{restaurant.menu_description}}
+        <button type="submit" name="reservation" value={{restaurant.restaurant_number}}> Reserva</button>
+        <br>
+        <hr>
+    {% endfor %}
+</form>
+
+{% endblock %}
+
+

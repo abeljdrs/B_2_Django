@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Esto es un comparador</title>
+</head>
+<body>
+
+	<form>
+		<input type="text" placeholder="city" name="cityInput" id="cityInput" >
+		<input type="text" placeholder="category" name="categoryInput" id="categoryInput" >
+		<input type="number" placeholder="Max Price" name="priceInput" id="priceInput" >
+		<input type="submit" name="submitButton" value="Search" onclick="comparatorFunction()">
+	</form>
+
+	<script type="text/javascript">
+
+	function comparatorFunction(){
+		var city = document.getElementById('cityInput').value;
+		var category = document.getElementById('categoryInput').value;
+		var price = document.getElementById('priceInput').value;
+	
+		var params = '?';
+		if(city) {
+			params += 'city=' + city + '&';
+		}
+		if(category) {
+			params += 'category=' + category + '&';
+		}
+		if(price) {
+			params += 'price=' + price + '&';
+		}
+		params += 'format=json';
+		var myHeaders = new Headers();
+		myHeaders.append("Content-Type", "application/json");
+		var config = { 
+				method: 'GET',
+				headers: myHeaders
+			};
+		var urls = ['http://127.0.0.1:8000/api/restaurants/']
+
+		var dataResponse = []
+		urls.forEach(url => {
+			url += params;
+			fetch(url).
+				then(response => console.log(response))
+				.then(json => console.log(json));
+			/**
+			fetch(url, config).then( function(response) {
+				if(response.ok){
+					console.log(response);
+					data = {
+						'url' : url,
+						'data' : response
+					}
+				}
+			})
+			.catch(function(error){
+				console.log(error);
+				console.log('error at fetch request:' + error.message);
+			})
+			*/
+		});
+	}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'forkilla/base.html' %}
+
+
+{% block content %}
+
+
+{% if restaurant != "error" %}
+    {% if request.user.is_authenticated %}
+    {% if form %}
+    <h2> Deje su opinion sobre {{restaurant.name}}</h2>
+    <form method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="next" value="{{ruta}}">
+        <button type="submit">Save</button>
+    </form>
+    {% endif %}
+   {% endif %} 
+
+
+{% else %}
+    <p>This restaurant does not exist</p>
+{% endif %}
+
+{% endblock %}

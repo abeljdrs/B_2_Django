@@ -1,0 +1,28 @@
+{% extends 'forkilla/base.html' %}
+
+{% block content %} 
+ 
+ {%for reserva in reservas %}
+ 	
+ 	{% if reserva.1 == 'old' %}
+ 		<span>{{reserva.0}}</span>
+ 		<a href="{% url 'review' reserva.0.restaurant.restaurant_number reserva.0.id %}">Deje su opinion sobre este restaurante </a>
+ 		<br>
+    	
+ 	{% else %}
+ 		
+ 		<form method="POST" >
+ 		<span>{{reserva.0}}</span>
+ 		<span>{{reserva.0.id}}</span>
+        {% csrf_token %}
+        <input type="hidden" name="reservation" value="{{reserva.0.id}}" id="reservation">
+        <button type="submit">Cancel reservation</button>
+ 	    </form>
+ 	    <br>
+
+ 	{% endif %}
+
+
+ {% endfor %}  
+
+{% endblock %}

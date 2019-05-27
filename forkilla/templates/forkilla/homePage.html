@@ -1,0 +1,21 @@
+{% extends 'forkilla/base.html' %}
+
+{% block content %}
+<h4>forkilla/</h4>
+
+{% if restaurantes %}
+    <ul>
+    {% for restaurant in restaurantes %}
+    	<li><a href="{% url 'details' restaurant.restaurant_number%}"> {{restaurant.name}} </a>    : {{restaurant.menu_description}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No restaurants are available.</p>
+{% endif %}
+
+<ul>
+    {% for city in cities %}
+            <li><a href="{% url 'restaurants' city %}">{{city}} </a></li>  
+    {% endfor %}
+</ul>
+{% endblock %}
