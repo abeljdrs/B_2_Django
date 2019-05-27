@@ -1,7 +1,7 @@
 [
   {
     "model": "forkilla.Restaurant",
-    "pk": 1,
+    "pk": 10,
     "fields": {
       "restaurant_number": "09186777",
       "name": "Only Tapas",
@@ -19,7 +19,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": 2,
+    "pk": 20,
     "fields": {
       "restaurant_number": "0918888",
       "name": "Only Fish",
@@ -37,7 +37,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 21,
     "fields": {
       "restaurant_number": "0000001",
       "name": "Only Meat",
@@ -55,7 +55,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 22,
     "fields": {
       "restaurant_number": "0000002",
       "name": "Only Veggie",
@@ -73,7 +73,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 23,
     "fields": {
       "restaurant_number": "00000003",
       "name": "Only Pita",
@@ -91,7 +91,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 24,
     "fields": {
       "restaurant_number": "09186666",
       "name": "Only Pizza",
@@ -109,7 +109,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 25,
     "fields": {
       "restaurant_number": "0000005",
       "name": "Only Peruvian",
@@ -127,7 +127,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 26,
     "fields": {
       "restaurant_number": "09186633",
       "name": "Only Russian",
@@ -145,7 +145,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 27,
     "fields": {
       "restaurant_number": "09186466",
       "name": "Only Fusion",
@@ -163,7 +163,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 29,
     "fields": {
       "restaurant_number": "09186111",
       "name": "Only Afri",
@@ -181,7 +181,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 30,
     "fields": {
       "restaurant_number": "091861",
       "name": "Only Rice",
@@ -199,7 +199,7 @@
 
    {
     "model": "forkilla.Restaurant",
-    "pk": null,
+    "pk": 31,
     "fields": {
       "restaurant_number": "0918641",
       "name": "Only Mexican",
