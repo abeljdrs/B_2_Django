@@ -5,9 +5,10 @@ from django.conf.urls.static import static
 
 from . import views
 
+listOfAddresses = ['https://sd2019-forkillaa7.herokuapp.com']
 urlpatterns = [
 	url(r'^register/$', views.register, name='register'),
-	url(r'^comparator/$', views.comparator, name='comparator'),
+	url(r'^comparator/$', views.comparator, name='comparator', {'ips':listOfAddresses}),
 	url(r'^$', views.index, name = 'index'),
 	url(r'^restaurants/$', views.restaurants, name='restaurants'),
 	url(r'^restaurants/(?P<city>.*)/(?P<category>.*)$', views.restaurants, name='restaurants'),
