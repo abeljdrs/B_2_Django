@@ -40,13 +40,21 @@
 		var baseAPI = '/api/restaurants/'
 		var dataResponse = []
 		urls.forEach(url => {
-			url = url + baseAPI + params;
-			fetch(url).
-				then(function(response){
-					console.log(response);
-					return response;
-				})
-				.then(json => console.log(json));
+			var consultURL = url + baseAPI + params;
+			console.log(url);
+			$.ajax({
+				url: consultURL,
+				type: 'GET', //Allowed without auth
+				dataType: 'json',
+				error: function () {
+					console.log('ERROR with ip ---' + consultURL);
+				},
+				success: function (data) {
+					console.log(data);
+					data.results.forEach(function(restaurant) { 
+					});
+				}
+			});
 			/**
 			fetch(url, config).then( function(response) {
 				if(response.ok){
