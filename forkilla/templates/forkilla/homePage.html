@@ -1,21 +1,95 @@
+
 {% extends 'forkilla/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- Bootstrap core CSS -->
+  	<link href="{% static 'css/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  	<!-- Custom styles for this template -->
+  	<link href="{% static 'css/css/business-frontpage.css' %}" rel="stylesheet">
+	<title></title>
+
+
+</head>
+<body>
 
 {% block content %}
-<h4>forkilla/</h4>
 
-{% if restaurantes %}
-    <ul>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h2>Que hacemos?</h2>
+        <hr>
+        <p>Juntamos restaurantes, de muchas ciudades, en una sola web para que puedas reservarlos y ver sus valoraciones..</p>
+      </div>
+      <div class="col-md-4 mb-5">
+        <h2>Contact Us</h2>
+        <hr>
+        <address>
+          <strong>Start Bootstrap</strong>
+          <br>Universitat de Barcelona
+          <br>Menlo Park
+          <br>
+        </address>
+        <address>
+          <abbr title="Phone">P:</abbr>
+          (123) 456-7890
+          <br>
+          <abbr title="Email">E:</abbr>
+          <a href="mailto:#">name@example.com</a>
+        </address>
+      </div>
+    </div>
+    <!-- /.row -->
+
+
+    {% if restaurantes %}
+   		 <div class="row">
     {% for restaurant in restaurantes %}
-    	<li><a href="{% url 'details' restaurant.restaurant_number%}"> {{restaurant.name}} </a>    : {{restaurant.menu_description}}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No restaurants are available.</p>
-{% endif %}
+       <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src={{restaurant.featured_photo.url}} alt="" height="300">
+          <div class="card-body">
+            <h4 class="card-title">{{restaurant.name}}</h4>
+            <p class="card-text">{{restaurant.menu_description}}</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'details' restaurant.restaurant_number%}" class="btn btn-primary">Find Out More!</a>
+          </div>
+        </div>
+      </div>
 
-<ul>
-    {% for city in cities %}
-            <li><a href="{% url 'restaurants' city %}">{{city}} </a></li>  
-    {% endfor %}
-</ul>
+   	{% endfor %}
+    	</div>
+  	{% else %}
+      <p>No restaurants are available.</p>
+  	{% endif %}
+
+  </div>
+  <!-- /.container -->
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
 {% endblock %}
+
+</body>
+</html>
+
+

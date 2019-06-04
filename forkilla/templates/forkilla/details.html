@@ -6,7 +6,9 @@
 <h4>forkilla/{{restaurant.city}}/{{restaurant.category}}/{{restaurant.name}}</h4>
 
 {% if restaurant != "error" %}
-    <ul>	
+
+    <ul id="list_description_restaurant">	
+    <img src={{restaurant.featured_photo.url}} alt="My image" style="height: 250px; width: 250px;" class="img_detail">
     <li>Name: {{restaurant.name}}</li>
     <li>Menu: {{restaurant.menu_description}}</li>
     <li>Price: {{restaurant.prive_average}}</li>
@@ -17,7 +19,7 @@
     <li>Address: {{restaurant.address}}</li>
     <li>Country: {{restaurant.country}}</li>
     </ul>
-    <img src={{restaurant.featured_photo.url}} alt="My image" style="height: 250px; width: 250px;">
+    
 
    {% if request.user.is_authenticated %}
     {% if form %}
@@ -30,14 +32,30 @@
     {% endif %}
    {% endif %} 
 
-   {% if reviews %}
-        {% for rev in reviews %}
-        <span > {{rev.review_user}}</span> 
-        <br>
-        <span > {{rev.comment}}</span> 
-        <hr>
-        {% endfor %}
-   {% endif %}
+
+ {% if reviews %}
+<div id="reviewsContainer" class="container-fluid">
+    <div id="reviews">
+    <h1>Reviews</h1> <br>
+    <ul class="list-group">
+     {% for rev in reviews%}
+    <li class="list-group-item">
+        <span ><strong>{{rev.review_user}}</strong></span> 
+        <span > dice: {{rev.comment}}</span> 
+    </li>
+    {% endfor %}
+    </ul>
+
+    </div>
+
+    </div>
+    {% endif %}
+
+
+
+
+
+
 
 
 
