@@ -1,7 +1,10 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/static/js/header.29dac96530e1.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Esto es un comparador</title>
+
 </head>
 <body>
 
@@ -9,27 +12,79 @@
 		<input type="text" placeholder="city" name="cityInput" id="cityInput" >
 		<input type="text" placeholder="category" name="categoryInput" id="categoryInput" >
 		<input type="number" placeholder="Max Price" name="priceInput" id="priceInput" >
-		<input type="submit" name="submitButton" value="Search" onclick="comparatorFunction()">
+		<input type="button" name="submitButton" value="Search" onclick="comparatorFunction()">
 	</form>
 
+	<div class="row">
+		<div class="col-md-12">
+			<div class="body_response" id="body_response" style="width: 100% !important"></div>
+		</div>
+	</div>
+
+	  <!-- Bootstrap core JavaScript -->
+	  <script src="vendor/jquery/jquery.min.js"></script>
+	  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 	<script type="text/javascript">
-
 	function comparatorFunction(){
-		var city = document.getElementByID('cityInput');
-		var category = document.getElementByID('categoryInput');
-		var price = document.getElementByID('priceInput');
+		var city = document.getElementById('cityInput').value;
+		var category = document.getElementById('categoryInput').value;
+		var price = document.getElementById('priceInput').value;
 	
-		var url = url('localhost:8000/api/restaurants/?')
-		
-
+		var params = '?';
+		if(city) {
+			params += 'city=' + city + '&';
+		}
+		if(category) {
+			params += 'category=' + category + '&';
+		}
+		if(price) {
+			params += 'price=' + price + '&';
+		}
+		params += 'format=json';
+		var myHeaders = new Headers();
+		myHeaders.append("Content-Type", "application/json");
+		var config = { 
+				method: 'GET',
+				headers: myHeaders
+			};
+		var urls = ['https://sd2019-forkillab2.herokuapp.com', 'https://sd2019-forkillaa7.herokuapp.com',
+			'https://sd2019-forkillab1.herokuapp.com', 'https://sd2019-forkilla-b3.herokuapp.com',
+			'https://sd2019-forkilla-b6.herokuapp.com']
+		var baseAPI = '/api/restaurants/'
+		var cardResult = $('.body_response');
+		urls.forEach(url => {
+			var consultURL = url + baseAPI + params;
+			console.log(url);
+			$.ajax({
+				url: consultURL,
+				type: 'GET', //Allowed without auth
+				dataType: 'json',
+				error: function () {
+					console.log('ERROR with ip ---' + consultURL);
+				},
+				success: function (data) {
+					console.log(url, data);
+					data.results.forEach(function(restaurant) {
+						restaurant['link'] = url + '/forkilla/restaurant/' + restaurant.restaurant_number;
+						var card =	'<div class="col-md-4 mb-5">' +
+										'<div class="card h-100">' +
+											'<img class="card-img-top" src="' + restaurant.featured_photo + '" alt="" height="300">' +
+												'<div class="card-body">' +
+													'<h4 class="card-title">' + restaurant.name + '</h4>' +
+													'<p class="card-text">' + restaurant.menu_description + '</p>' +
+												'</div>' +
+											'<div class="card-footer">' +
+												'<a href="' + restaurant.link + '" class="btn btn-primary">Find Out More!</a>' +
+											'</div>'
+										'</div>'
+									'</div>';
+						cardResult.append(card);
+					});
+				}
+			});
+		});
 	}
-		
 	</script>
-	
-
-
-
-
-
 </body>
 </html>
