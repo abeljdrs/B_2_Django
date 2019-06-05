@@ -1,3 +1,7 @@
+{% extends 'forkilla/base.html' %}
+{% load static %}
+
+{% block content %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/static/js/header.29dac96530e1.js"></script>
 
@@ -69,7 +73,6 @@
 						restaurant['link'] = url + '/forkilla/restaurant/' + restaurant.restaurant_number;
 						var card =	'<div class="col-md-4 mb-5">' +
 										'<div class="card h-100">' +
-											'<img class="card-img-top" src="' + restaurant.featured_photo + '" alt="" height="300">' +
 												'<div class="card-body">' +
 													'<h4 class="card-title">' + restaurant.name + '</h4>' +
 													'<p class="card-text">' + restaurant.menu_description + '</p>' +
@@ -88,3 +91,4 @@
 	</script>
 </body>
 </html>
+{% endblock %}
